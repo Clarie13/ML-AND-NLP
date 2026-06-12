@@ -16,6 +16,12 @@ reg.fit(df[['area']], df.price)
 
 reg.predict([[5000]])
 
+%matplotlib inline
+plt.xlabel('Area')
+plt.ylabel('Price')
+plt.scatter(df.area, df.price, color='red', marker='+')
+plt.plot(df.area, reg.predict(df[['area']]), color='blue')
+
 reg.coef_ #this  is your value of m in formula y= m*x + b
 reg.intercept_ #this is the value of b
 
